@@ -1,0 +1,19 @@
+@import "~/src/styles/variables";
+
+@mixin tablet() {
+  @media (width >= $tablet) {
+    @content;
+  }
+}
+
+@mixin laptop() {
+  @media (width >= $laptop) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media (width >= $desktop) {
+    @content;
+  }
+}
