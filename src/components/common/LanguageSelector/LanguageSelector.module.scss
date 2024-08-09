@@ -1,0 +1,38 @@
+.icon {
+  font-size: 14px;
+  color: lightgrey;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 6px;
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  z-index: 10;
+
+  background-color: white;
+  padding: 10px 6px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.item {
+  &.active {
+    color: aqua;
+  }
+
+  &:hover {
+    color: blue;
+  }
+}

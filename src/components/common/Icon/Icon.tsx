@@ -1,14 +1,13 @@
 import React from "react";
 
-import s from "./Icon.module.scss";
-
 interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {
   variant: IconVariant;
+  className?: string;
 }
-function Icon({ variant, ...props }: IconProps) {
+function Icon({ variant, className = undefined, ...props }: IconProps) {
   return (
     <div>
-      <span className={`icon-${variant} ${s.icon}`} {...props}></span>
+      <span className={`icon-${variant} ${className}`} {...props} />
     </div>
   );
 }
