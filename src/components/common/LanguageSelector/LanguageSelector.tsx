@@ -28,7 +28,7 @@ function LanguageSelector() {
   console.log(locale);
   console.log(selected === locale);
   return (
-    <>
+    <div className={s.wrapper}>
       <button className={s.container} onClick={toggle}>
         <span>{selected.toUpperCase()}</span>
         <Icon variant="arrow_down" className={s.icon} />
@@ -71,7 +71,7 @@ function LanguageSelector() {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }
 

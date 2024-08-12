@@ -1,0 +1,8 @@
+@import "~/src/styles/mixins";
+.wrapper {
+  padding: 12px 6px;
+
+  @include tablet {
+    padding: 150px 50px 150px 30px;
+  }
+}
