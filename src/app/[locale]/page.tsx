@@ -6,8 +6,10 @@ export default function HomePage() {
   const t = useTranslations("HomePage");
   return (
     <div className={s.background}>
-      <h3>{t("subtitle")}</h3>
-      <h1>{t("title")}</h1>
+      <div className={s.titleContainer}>
+        <h3 className={s.subtitle}>{t("subtitle")}</h3>
+        <h1 className={s.title}>{t("title")}</h1>
+      </div>
     </div>
   );
 }

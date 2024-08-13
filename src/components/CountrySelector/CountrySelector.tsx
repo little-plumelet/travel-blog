@@ -1,30 +1,28 @@
-"use client";
-
 import React from "react";
-import Icon from "@/components/common/Icon";
-import { useLocale } from "next-intl";
-import locales from "@/constants/languages";
+
+import s from "./CountrySelector.module.scss";
+import { countries } from "@/constants/countries";
+import { Country } from "@/types/countries";
+import Icon from "../common/Icon";
 import { AnimatePresence, motion } from "framer-motion";
-import { usePathname, Link } from "@/navigation";
-import { LanguagesMap } from "@/enums/languages";
-import { Language } from "@/types/languages";
 import { dropDown } from "@/utils/motion";
+import { Link, usePathname } from "@/navigation";
+import { useTranslations } from "next-intl";
 
-import s from "./LanguageSelector.module.scss";
-
-function LanguageSelector() {
-  const [selected, setSelected] = React.useState(locales[0]);
+function CountrySelector() {
+  const [selected, setSelected] = React.useState(countries[0]);
   const [isOpen, setIsOpen] = React.useState(false);
-  const locale: Language = useLocale() as Language;
   const pathname = usePathname();
+  const t = useTranslations();
 
   const toggle = () => {
     setIsOpen((prev) => !prev);
   };
 
-  React.useEffect(() => {
-    setSelected(locale);
-  }, [locale]);
+  const handleSelect = (country: Country) => {
+    setSelected(country);
+    setIsOpen(false);
+  };
 
   return (
     <div className={s.wrapper}>
@@ -41,15 +39,14 @@ function LanguageSelector() {
             exit="hidden"
             className={s.menu}
           >
-            {locales.map((lang) => (
+            {countries.map((country) => (
               <Link
                 href={pathname}
-                locale={lang}
-                key={lang}
-                className={`${s.item} ${lang === locale ? s.active : ""}`}
+                key={country}
+                className={`${s.item} ${country === country ? s.active : ""}`}
                 onClick={() => setIsOpen(false)}
               >
-                <p className={s.langTitle}>{LanguagesMap[lang]}</p>
+                <p className={s.langTitle}>{country}</p>
               </Link>
             ))}
           </motion.div>
@@ -59,4 +56,4 @@ function LanguageSelector() {
   );
 }
 
-export default LanguageSelector;
+export default CountrySelector;

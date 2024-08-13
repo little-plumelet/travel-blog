@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat, Exo_2 } from "next/font/google";
 
 import "@/styles/index.scss";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin", "cyrillic"] });
+const exo = Exo_2({ subsets: ["latin", "cyrillic"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",

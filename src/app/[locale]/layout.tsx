@@ -1,6 +1,13 @@
-import LanguageSelector from "@/components/common/LanguageSelector";
+import LanguageSelector from "@/components/LanguageSelector";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { Montserrat, Exo_2 } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-montserrat",
+});
+const exo = Exo_2({ subsets: ["latin", "cyrillic"], variable: "--font-exo" });
 
 export default async function LocaleLayout({
   children,
@@ -14,7 +21,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={`${montserrat.variable} ${exo.variable}`}>
       <body>
         <NextIntlClientProvider messages={messages}>
           <LanguageSelector />
