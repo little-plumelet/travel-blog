@@ -2,13 +2,14 @@
 .background {
   width: 100vw;
   height: 100vh;
-  background-image: url("/assets/images/home/bg.jpg");
+  background-image: url("/assets/images/home/bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .titleContainer {
+  position: relative;
   width: 100%;
   height: 80%;
   display: flex;
@@ -16,6 +17,8 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
+
+  animation: moveUpTitle 5s ease-in-out forwards;
 
   @include tablet {
     gap: 50px;
@@ -28,9 +31,9 @@
 
 .subtitle {
   font-family: var(--font-exo);
-  font-weight: 700;
+  font-weight: 400;
   font-size: 24px;
-  color: #fff;
+  color: #000;
   text-align: center;
 
   @include tablet {
@@ -44,4 +47,129 @@
 
 .title {
   @include pageTitle();
+}
+
+.cloudsContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cloud {
+  position: absolute;
+  width: auto;
+  height: 70%;
+
+  @include tablet {
+    height: 120%;
+  }
+
+  @include laptop {
+    height: 150%;
+  }
+
+  &_left__top {
+    top: 0;
+
+    animation: moveLeftUpLittle 5s ease-in-out forwards;
+  }
+
+  &_right__top {
+    right: 0;
+    top: -15%;
+
+    animation: moveRightUpLittle 5s ease-in-out forwards;
+  }
+
+  &_center {
+    top: 50%;
+    left: 50%;
+    transform: translateY(-35%) translateX(-50%);
+
+    &__animated {
+      animation: moveUp 5s ease-in-out forwards;
+    }
+  }
+
+  &_left__bottom {
+    bottom: 10%;
+
+    &__animated {
+      animation: moveLeftUp 5s ease-in-out forwards;
+    }
+  }
+
+  &_right__bottom {
+    right: 0;
+    bottom: 10%;
+
+    &__animated {
+      animation: moveRightUp 5s ease-in-out forwards;
+    }
+  }
+}
+
+@keyframes moveRightUp {
+  0% {
+    right: 0;
+    bottom: -10%;
+  }
+  100% {
+    right: -20%;
+    bottom: 8%;
+  }
+}
+
+@keyframes moveRightUpLittle {
+  0% {
+    right: 0;
+    top: -5%;
+  }
+  100% {
+    right: -5%;
+    top: -15%;
+  }
+}
+
+@keyframes moveLeftUp {
+  0% {
+    left: 0;
+    bottom: -10%;
+  }
+  100% {
+    left: -40%;
+    bottom: 8%;
+  }
+}
+
+@keyframes moveLeftUpLittle {
+  0% {
+    left: 0;
+    top: 5%;
+  }
+  100% {
+    left: -5%;
+    top: 0;
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    top: 80%;
+    transform: translateY(-35%) translateX(-50%);
+  }
+  100% {
+    top: 40%;
+    transform: translateY(-35%) translateX(-50%);
+  }
+}
+
+@keyframes moveUpTitle {
+  0% {
+    top: 20%;
+  }
+  100% {
+    top: 0;
+  }
 }

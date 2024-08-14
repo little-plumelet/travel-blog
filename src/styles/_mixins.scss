@@ -20,9 +20,9 @@
 
 @mixin pageTitle() {
   font-family: var(--font-exo);
-  font-weight: 700;
+  font-weight: 500;
   font-size: 36px;
-  color: #fff;
+  color: var(--page-title-color);
   text-align: center;
 
   @include tablet {
