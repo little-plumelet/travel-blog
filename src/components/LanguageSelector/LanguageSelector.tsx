@@ -1,60 +1,26 @@
 "use client";
 
 import React from "react";
-import Icon from "@/components/common/Icon";
 import { useLocale } from "next-intl";
-import locales from "@/constants/languages";
-import { AnimatePresence, motion } from "framer-motion";
 import { usePathname, Link } from "@/navigation";
-import { LanguagesMap } from "@/enums/languages";
 import { Language } from "@/types/languages";
-import { dropDown } from "@/utils/motion";
+import cn from "classnames";
 
 import s from "./LanguageSelector.module.scss";
 
 function LanguageSelector() {
-  const [selected, setSelected] = React.useState(locales[0]);
-  const [isOpen, setIsOpen] = React.useState(false);
   const locale: Language = useLocale() as Language;
   const pathname = usePathname();
 
-  const toggle = () => {
-    setIsOpen((prev) => !prev);
-  };
-
-  React.useEffect(() => {
-    setSelected(locale);
-  }, [locale]);
-
   return (
     <div className={s.wrapper}>
-      <button className={s.container} onClick={toggle}>
-        <span>{selected.toUpperCase()}</span>
-        <Icon variant="arrow_down" className={s.icon} />
-      </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            variants={dropDown()}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            className={s.menu}
-          >
-            {locales.map((lang) => (
-              <Link
-                href={pathname}
-                locale={lang}
-                key={lang}
-                className={`${s.item} ${lang === locale ? s.active : ""}`}
-                onClick={() => setIsOpen(false)}
-              >
-                <p className={s.langTitle}>{LanguagesMap[lang]}</p>
-              </Link>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <Link href={pathname} locale="en">
+        <p className={cn(s.langTitle, { [s.active]: locale === "en" })}>EN</p>
+      </Link>
+      <span className={s.separator} />
+      <Link href={pathname} locale="ru">
+        <p className={cn(s.langTitle, { [s.active]: locale === "ru" })}>RU</p>
+      </Link>
     </div>
   );
 }

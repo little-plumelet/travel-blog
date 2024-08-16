@@ -1,18 +1,8 @@
 @import "~/src/styles/variables";
 
 .wrapper {
-  position: absolute;
-  top: 0;
-  right: 10%;
-}
+  width: 100%;
 
-.icon {
-  font-size: 14px;
-  color: lightgrey;
-}
-
-.container {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,29 +12,16 @@
   z-index: 10;
 }
 
-.menu {
-  position: absolute;
-  z-index: 10;
-
-  background-color: white;
-  padding: 10px 16px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 8px;
-
-  border-radius: $br;
-  box-shadow: $box-shadow;
+.langTitle {
+  color: #ccc;
 }
 
-.item {
-  &.active {
-    color: aqua;
-  }
+.active {
+  color: #000;
+}
 
-  &:hover {
-    color: blue;
-  }
+.separator {
+  width: 2px;
+  height: 16px;
+  border-left: 2px solid var(--page-title-color);
 }

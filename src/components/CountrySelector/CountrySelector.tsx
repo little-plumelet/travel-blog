@@ -20,6 +20,7 @@ function CountrySelector() {
   };
 
   const handleSelect = (country: Country) => {
+    console.log(country);
     setSelected(country);
     setIsOpen(false);
   };
@@ -44,7 +45,7 @@ function CountrySelector() {
                 href={pathname}
                 key={country}
                 className={`${s.item} ${country === country ? s.active : ""}`}
-                onClick={() => setIsOpen(false)}
+                onClick={handleSelect.bind(null, country)}
               >
                 <p className={s.langTitle}>{country}</p>
               </Link>

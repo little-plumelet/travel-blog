@@ -1,4 +1,4 @@
-import LanguageSelector from "@/components/LanguageSelector";
+import Navigation from "@/components/Navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Montserrat, Exo_2 } from "next/font/google";
@@ -24,7 +24,8 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${montserrat.variable} ${exo.variable}`}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <LanguageSelector />
+          <Navigation />
+
           {children}
         </NextIntlClientProvider>
       </body>
