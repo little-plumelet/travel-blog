@@ -5,9 +5,10 @@ import CountrySelector from "../CountrySelector";
 import LanguageSelector from "../LanguageSelector";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import Burger from "../Burger";
+import { Link } from "@/navigation";
 
 import s from "./Navigation.module.scss";
-import { Link } from "@/navigation";
 
 function Navigation() {
   const t = useTranslations("common");
@@ -24,8 +25,15 @@ function Navigation() {
         />
         <span>{t("logo")}</span>
       </Link>
-      <CountrySelector />
-      <LanguageSelector />
+      <div className={s.item}>
+        <CountrySelector />
+      </div>
+      <div className={s.item}>
+        <LanguageSelector />
+      </div>
+      <div className={s.burger}>
+        <Burger />
+      </div>
     </div>
   );
 }

@@ -9,13 +9,14 @@
   padding: 12px 10px;
   z-index: 10;
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
   justify-items: center;
   column-gap: 50px;
 
   @include tablet {
     padding: 12px 32px;
+    grid-template-columns: 1fr auto auto;
   }
 }
 
@@ -33,14 +34,25 @@
     color: var(--dark-blue);
     font-weight: 500;
     text-shadow: 2px 2px 1px rgba(182, 182, 182, 0.506);
-    // text-decoration: dashed underline 1px var(--dark-blue);
-    // text-underline-offset: 5px;
     font-size: 18px;
-    line-height: 150%;
   }
 }
 
 .logoIcon {
   border: 1px dashed var(--dark-blue);
   border-radius: 50%;
+}
+
+.item {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+.burger {
+  @include tablet {
+    display: none;
+  }
 }
