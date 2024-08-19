@@ -1,6 +1,14 @@
 {
+  "common": {
+    "logo": "Beauty admirer's blog"
+  },
   "HomePage": {
     "subtitle": "Welcome",
     "title": "Lets explore"
+  },
+  "countries": {
+    "title": "Countries",
+    "georgia": "Georgia",
+    "montenegro": "Montenegro"
   }
 }

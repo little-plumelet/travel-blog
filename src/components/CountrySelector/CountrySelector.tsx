@@ -8,12 +8,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import { dropDown } from "@/utils/motion";
 import { Link, usePathname } from "@/navigation";
 import { useTranslations } from "next-intl";
+import cn from "classnames";
 
 function CountrySelector() {
   const [selected, setSelected] = React.useState(countries[0]);
   const [isOpen, setIsOpen] = React.useState(false);
   const pathname = usePathname();
-  const t = useTranslations();
+  const t = useTranslations("countries");
 
   const toggle = () => {
     setIsOpen((prev) => !prev);
@@ -28,8 +29,11 @@ function CountrySelector() {
   return (
     <div className={s.wrapper}>
       <button className={s.container} onClick={toggle}>
-        <span>{selected.toUpperCase()}</span>
-        <Icon variant="arrow_down" className={s.icon} />
+        <span>{t("title").toUpperCase()}</span>
+        <Icon
+          variant="arrow_down"
+          className={cn(s.icon, { [s.open]: isOpen })}
+        />
       </button>
       <AnimatePresence>
         {isOpen && (
@@ -44,10 +48,10 @@ function CountrySelector() {
               <Link
                 href={pathname}
                 key={country}
-                className={`${s.item} ${country === country ? s.active : ""}`}
+                className={`${s.item} ${country === selected ? s.active : ""}`}
                 onClick={handleSelect.bind(null, country)}
               >
-                <p className={s.langTitle}>{country}</p>
+                <p className={s.langTitle}>{t(`${country}`)}</p>
               </Link>
             ))}
           </motion.div>

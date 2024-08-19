@@ -1,6 +1,14 @@
 {
+  "common": {
+    "logo": "Блог обожателя красот"
+  },
   "HomePage": {
     "subtitle": "Привет",
     "title": "Поищем красивые места?"
+  },
+  "countries": {
+    "title": "Страны",
+    "georgia": "Грузия",
+    "montenegro": "Черногория"
   }
 }

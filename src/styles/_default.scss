@@ -6,10 +6,19 @@
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
   --font-exo: "Exo 2", sans-serif;
+  --font-shantell: "Shantell Sans", serif;
   font-family: "Montserrat", sans-serif;
 
   // colors
   --page-title-color: #0c1d36;
+
+  --nav-gray: rgb(120, 120, 120);
+
+  --dark-blue: #136296;
+  --turquoise: #6ac9cc;
+  --blue: #3792cf;
+  --light-blue: #dbf6ff;
+  --yellow: #fee36f;
 }
 
 /* ---nullification--- */
@@ -79,7 +88,6 @@ button::-moz-focus-inner {
 }
 a,
 a:visited {
-  color: inherit;
   text-decoration: none;
 }
 a:hover {
