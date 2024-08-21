@@ -21,21 +21,7 @@
 }
 
 .logo {
-  justify-self: start;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-
-  cursor: pointer;
-
-  span {
-    font-family: var(--font-shantell);
-    color: var(--dark-blue);
-    font-weight: 500;
-    text-shadow: 2px 2px 1px rgba(182, 182, 182, 0.506);
-    font-size: 18px;
-  }
+  @include logo();
 }
 
 .logoIcon {
