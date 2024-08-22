@@ -19,21 +19,38 @@ export function dropDown() {
 
 export function slideLeft() {
   return {
+    hidden: {
+      x: "-100%",
+      opacity: 0,
+      transition: { duration: 0.4, ease: "easeInOut" },
+    },
     visible: {
-      x: 0,
-      // opacity: 1,
+      x: "0%",
+      opacity: 1,
       transition: {
-        x: { type: "spring", stiffness: 50, damping: 20 },
-        // opacity: { duration: 0.8, ease: "easeInOut" },
+        x: { duration: 0.4, ease: "easeInOut" },
+        opacity: { duration: 0.2, ease: "easeInOut" },
       },
     },
-    hidden: {
-      // opacity: 0,
+    exit: {
       x: "-100%",
+      opacity: 0,
       transition: {
-        x: { type: "spring", stiffness: 50, damping: 20 },
-        // opacity: { duration: 0.8, ease: "easeInOut" },
+        x: { duration: 0.4, ease: "easeInOut" },
+        opacity: { duration: 0.2, ease: "easeInOut" },
       },
     },
   };
 }
+
+export const scaleDown = () => ({
+  hidden: {
+    scale: 0,
+    opacity: 0,
+    transition: { duration: 0.4, ease: "easeInOut" },
+  },
+  visible: {
+    scale: 1,
+    opacity: 1,
+  },
+});

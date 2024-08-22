@@ -1,8 +1,9 @@
 import Menu from "@/components/Menu";
 import Navigation from "@/components/Navigation";
+import { MenuContextProvider } from "@/contexts/menuContext/menuContextProvider";
+import { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { Html } from "next/document";
 import { Montserrat, Exo_2, Shantell_Sans } from "next/font/google";
 
 const montserrat = Montserrat({
@@ -15,6 +16,11 @@ const shantell = Shantell_Sans({
   subsets: ["latin", "cyrillic"],
   variable: "--font-shantell",
 });
+
+export const metadata: Metadata = {
+  title: "Travel blog",
+  description: "Travel blog",
+};
 
 export default async function LocaleLayout({
   children,
@@ -38,9 +44,11 @@ export default async function LocaleLayout({
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <Navigation />
-          <Menu />
-          {children}
+          <MenuContextProvider>
+            <Navigation />
+            <Menu />
+            {children}
+          </MenuContextProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -9,9 +9,13 @@ import Burger from "../Burger";
 import { Link } from "@/navigation";
 
 import s from "./Navigation.module.scss";
+import { useMenuContext } from "@/contexts/menuContext/useMenuContext";
+import { scaleDown } from "@/utils/motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 function Navigation() {
   const t = useTranslations("common");
+  const { isOpen } = useMenuContext();
 
   return (
     <div className={s.wrapper}>
@@ -32,7 +36,16 @@ function Navigation() {
         <LanguageSelector />
       </div>
       <div className={s.burger}>
-        <Burger />
+        <AnimatePresence>
+          <motion.div
+            key="burger"
+            variants={scaleDown()}
+            initial="visible"
+            animate={isOpen ? "hidden" : "visible"}
+          >
+            <Burger />
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   );
