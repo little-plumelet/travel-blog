@@ -2,6 +2,7 @@ import Menu from "@/components/Menu";
 import Navigation from "@/components/Navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { Html } from "next/document";
 import { Montserrat, Exo_2, Shantell_Sans } from "next/font/google";
 
 const montserrat = Montserrat({
@@ -31,6 +32,10 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${montserrat.variable} ${exo.variable} ${shantell.variable}`}
     >
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <title>travel blog</title>
+      </head>
       <body>
         <NextIntlClientProvider messages={messages}>
           <Navigation />
