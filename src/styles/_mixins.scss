@@ -24,6 +24,7 @@
   font-size: 36px;
   color: var(--page-title-color);
   text-align: center;
+  opacity: 0.8;
 
   @include tablet {
     font-size: 48px;

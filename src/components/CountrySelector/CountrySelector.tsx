@@ -1,19 +1,18 @@
 import React from "react";
-
-import s from "./CountrySelector.module.scss";
 import { countries } from "@/constants/countries";
 import { Country } from "@/types/countries";
 import Icon from "../common/Icon";
 import { AnimatePresence, motion } from "framer-motion";
 import { dropDown } from "@/utils/motion";
-import { Link, usePathname } from "@/navigation";
+import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 import cn from "classnames";
+
+import s from "./CountrySelector.module.scss";
 
 function CountrySelector() {
   const [selected, setSelected] = React.useState(countries[0]);
   const [isOpen, setIsOpen] = React.useState(false);
-  const pathname = usePathname();
   const t = useTranslations("countries");
 
   const toggle = () => {
@@ -21,7 +20,6 @@ function CountrySelector() {
   };
 
   const handleSelect = (country: Country) => {
-    console.log(country);
     setSelected(country);
     setIsOpen(false);
   };
@@ -46,7 +44,7 @@ function CountrySelector() {
           >
             {countries.map((country) => (
               <Link
-                href={pathname}
+                href={`/${country}`}
                 key={country}
                 className={`${s.item} ${country === selected ? s.active : ""}`}
                 onClick={handleSelect.bind(null, country)}
