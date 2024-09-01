@@ -62,6 +62,7 @@
   position: absolute;
   width: auto;
   height: 70%;
+  opacity: 0.8;
 
   @include tablet {
     height: 120%;
@@ -77,11 +78,31 @@
     animation: moveLeftUpLittle 5s ease-in-out forwards;
   }
 
+  &_left__top_2 {
+    width: 80%;
+    height: auto;
+    left: 0;
+    top: -20%;
+    opacity: 0.5;
+
+    animation: moveLeftUpLittle_2 4s ease-in-out forwards;
+  }
+
   &_right__top {
     right: 0;
     top: -15%;
 
     animation: moveRightUpLittle 5s ease-in-out forwards;
+  }
+
+  &_right__top_2 {
+    width: 80%;
+    height: auto;
+    right: 0;
+    top: -15%;
+    opacity: 0.5;
+
+    animation: moveRightUpLittle 4s ease-in-out forwards;
   }
 
   &_center {
@@ -91,6 +112,19 @@
 
     &__animated {
       animation: moveUp 5s ease-in-out forwards;
+    }
+  }
+
+  &_center_2 {
+    width: 100%;
+    height: auto;
+    top: 70%;
+    left: 50%;
+    transform: translateY(-25%) translateX(-50%);
+    opacity: 0.6;
+
+    &__animated {
+      animation: moveUp_2 5s ease-in-out forwards;
     }
   }
 
@@ -109,6 +143,19 @@
     &__animated {
       animation: moveRightUp 5s ease-in-out forwards;
     }
+  }
+
+  &__infinite {
+    width: 100vw;
+    height: auto;
+    left: 0;
+    opacity: 0.8;
+    animation: infiniteClouds infinite 40s linear;
+  }
+
+  &__infinite_2 {
+    left: 100vw;
+    opacity: 0.7;
   }
 }
 
@@ -134,6 +181,17 @@
   }
 }
 
+@keyframes moveRightUpLittle_2 {
+  0% {
+    right: 0;
+    top: -10%;
+  }
+  100% {
+    right: -5%;
+    top: -32%;
+  }
+}
+
 @keyframes moveLeftUp {
   0% {
     left: 0;
@@ -156,6 +214,17 @@
   }
 }
 
+@keyframes moveLeftUpLittle_2 {
+  0% {
+    left: 0;
+    top: -20%;
+  }
+  100% {
+    left: -3%;
+    top: -40%;
+  }
+}
+
 @keyframes moveUp {
   0% {
     top: 80%;
@@ -167,11 +236,35 @@
   }
 }
 
+@keyframes moveUp_2 {
+  0% {
+    top: 70%;
+    transform: translateY(-25%) translateX(-40%);
+  }
+  100% {
+    top: 30%;
+    transform: translateY(-25%) translateX(-40%);
+  }
+}
+
 @keyframes moveUpTitle {
   0% {
     top: 20%;
+    transform: scale(0.5);
+    opacity: 0;
   }
   100% {
     top: 0;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes infiniteClouds {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }

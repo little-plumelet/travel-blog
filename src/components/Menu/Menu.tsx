@@ -20,6 +20,7 @@ const Menu = () => {
   const t = useTranslations();
 
   const closeMenu = (e: any) => {
+    console.log("!!!!");
     setIsOpen(false);
   };
 
@@ -45,7 +46,7 @@ const Menu = () => {
           exit="exit"
           className={s.wrapper}
         >
-          <div className={s.menuHeader}>
+          <div className={s.menuHeader} onClick={closeMenu}>
             <Link className={s.logo} href="/">
               <Image
                 src="/assets/images/logo.svg"
@@ -56,21 +57,13 @@ const Menu = () => {
               />
               <span>{t("common.logo")}</span>
             </Link>
-            {/* <button
-              onClick={closeMenu}
-              className={s.closeButton}
-              type="button"
-              aria-label="close-button"
-            >
-              &times;
-            </button> */}
             <Burger />
           </div>
 
           <div className={s.menuContainer}>
             {countries.map((country) => (
               <Link
-                href="#"
+                href={`/${country}`}
                 key={country}
                 className={`${s.menuItem} ${
                   country === selected ? s.active : ""

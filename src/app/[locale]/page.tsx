@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import cn from "classnames";
 
-import s from "./Home.module.scss";
+import s from "./style.module.scss";
 
 export default function HomePage() {
   const t = useTranslations("HomePage");
@@ -12,10 +12,34 @@ export default function HomePage() {
         <Image
           src="/assets/images/home/cloud_1.webp"
           alt="cloud-left-top"
+          width={840}
+          height={1099}
+          className={cn(
+            s.cloud,
+            s.cloud_left__top_2,
+            s.cloud_left__top_2__animated
+          )}
+        />
+        <Image
+          src="/assets/images/home/cloud_2.webp"
+          alt="cloud-right-top"
+          width={840}
+          height={861}
+          className={cn(
+            s.cloud,
+            s.cloud_right__top_2,
+            s.cloud_right__top_2__animated
+          )}
+        />
+
+        <Image
+          src="/assets/images/home/cloud_1.webp"
+          alt="cloud-left-top"
           width={640}
           height={899}
           className={cn(s.cloud, s.cloud_left__top)}
         />
+
         <Image
           src="/assets/images/home/cloud_2.webp"
           alt="cloud-right-top"
@@ -59,6 +83,7 @@ export default function HomePage() {
             s.cloud_right__bottom__animated
           )}
         />
+
         <Image
           src="/assets/images/home/cloud_4.webp"
           alt="cloud_4"
@@ -69,10 +94,32 @@ export default function HomePage() {
         <Image
           src="/assets/images/home/cloud_4.webp"
           alt="cloud_4"
+          width={887}
+          height={708}
+          className={cn(s.cloud, s.cloud_center_2, s.cloud_center_2__animated)}
+        />
+        <Image
+          src="/assets/images/home/cloud_4.webp"
+          alt="cloud_4"
           width={687}
           height={508}
           className={cn(s.cloud, s.cloud_center, s.cloud_center__animated)}
           loading="eager"
+        />
+
+        <Image
+          src="/assets/images/home/cloud_4.webp"
+          alt="cloud_4"
+          width={887}
+          height={708}
+          className={cn(s.cloud, s.cloud__infinite)}
+        />
+        <Image
+          src="/assets/images/home/cloud_4.webp"
+          alt="cloud_4"
+          width={887}
+          height={708}
+          className={cn(s.cloud, s.cloud__infinite, s.cloud__infinite_2)}
         />
       </div>
       <div className={s.titleContainer}>

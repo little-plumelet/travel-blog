@@ -47,7 +47,7 @@ export default async function LocaleLayout({
           <MenuContextProvider>
             <Navigation />
             <Menu />
-            {children}
+            <main>{children}</main>
           </MenuContextProvider>
         </NextIntlClientProvider>
       </body>
