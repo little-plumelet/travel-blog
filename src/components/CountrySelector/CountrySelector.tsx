@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { countries } from "@/constants/countries";
 import { Country } from "@/types/countries";

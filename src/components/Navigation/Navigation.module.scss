@@ -28,9 +28,3 @@
     display: block;
   }
 }
-
-.burger {
-  @include tablet {
-    display: none;
-  }
-}
