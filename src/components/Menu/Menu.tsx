@@ -20,7 +20,6 @@ const Menu = () => {
   const t = useTranslations();
 
   const closeMenu = (e: any) => {
-    console.log("!!!!");
     setIsOpen(false);
   };
 

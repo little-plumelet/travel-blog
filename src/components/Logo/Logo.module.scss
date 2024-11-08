@@ -1,0 +1,10 @@
+@import "~/src/styles/navigation_mixins";
+
+.logo {
+  @include logo();
+}
+
+.logoIcon {
+  border: 1px dashed var(--dark-blue);
+  border-radius: 50%;
+}
