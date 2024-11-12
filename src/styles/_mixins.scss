@@ -35,6 +35,26 @@
   }
 }
 
-@mixin pageContent() {
-  padding-top: $header-height;
+@mixin pageParagraphText() {
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+
+  @include tablet {
+    font-size: 14px;
+  }
+
+  @include desktop {
+    font-size: 14px;
+  }
+}
+
+@mixin blockContent() {
+  padding-left: $padding_general_mobile;
+  padding-right: $padding_general_mobile;
+
+  @include tablet() {
+    padding-left: $padding_general;
+    padding-right: $padding_general;
+  }
 }
