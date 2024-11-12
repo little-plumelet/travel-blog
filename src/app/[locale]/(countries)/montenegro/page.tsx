@@ -17,7 +17,7 @@ function page() {
               <Image
                 src="/assets/images/countries/montenegro/main/main_mob.webp"
                 alt="lagoon"
-                width={1534}
+                width={4000}
                 height={2252}
                 sizes="100vw"
                 className={s.mainImg}
@@ -25,8 +25,8 @@ function page() {
               <Image
                 src="/assets/images/countries/montenegro/main/frame_mob.webp"
                 alt="frame"
-                width={1819}
-                height={4000}
+                width={1534}
+                height={2252}
                 sizes="100vw"
                 className={s.frame}
               />

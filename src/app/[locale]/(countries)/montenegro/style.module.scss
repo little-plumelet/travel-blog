@@ -17,6 +17,8 @@
   height: auto;
   max-height: 800px;
 
+  object-fit: cover;
+
   @include tablet() {
     width: 100%;
     height: auto;
@@ -38,7 +40,7 @@
     width: 100%;
     height: auto;
     max-height: none;
-    transform: rotate(180deg) translate(50%, -0.5%);
+    transform: rotate(180deg) translate(50%, -0.5%) scale(1.08);
   }
 }
 .title {

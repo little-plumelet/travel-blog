@@ -4,7 +4,7 @@
 
 .wrapper {
   position: absolute;
-  height: $header-height;
+  height: $header-height-mobile;
   width: 100%;
   top: 0;
   padding: 12px $padding_general_mobile;
@@ -16,6 +16,7 @@
   column-gap: 50px;
 
   @include tablet {
+    height: $header-height;
     padding: 12px $padding_general;
     grid-template-columns: 1fr auto auto;
   }
