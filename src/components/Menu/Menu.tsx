@@ -69,7 +69,7 @@ const Menu = () => {
                 }`}
                 onClick={handleSelect.bind(null, country)}
               >
-                <p className={s.langTitle}>{t(`countries.${country}`)}</p>
+                <p className={s.langTitle}>{t(`countries.${country}.title`)}</p>
               </Link>
             ))}
           </div>
