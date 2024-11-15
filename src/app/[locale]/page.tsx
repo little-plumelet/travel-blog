@@ -7,7 +7,7 @@ import s from "./style.module.scss";
 export default function HomePage() {
   const t = useTranslations("HomePage");
   return (
-    <div className={s.background}>
+    <main className={s.background}>
       <div className={s.cloudsContainer}>
         <Image
           src="/assets/images/home/cloud_1.webp"
@@ -126,6 +126,6 @@ export default function HomePage() {
         <h3 className={s.subtitle}>{t("subtitle")}</h3>
         <h1 className={s.title}>{t("title")}</h1>
       </div>
-    </div>
+    </main>
   );
 }

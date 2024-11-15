@@ -8,7 +8,19 @@
   },
   "countries": {
     "title": "Countries",
-    "georgia": "Georgia",
-    "montenegro": "Montenegro"
+    "georgia": {
+      "title": "Georgia"
+    },
+    "montenegro": {
+      "title": "Montenegro",
+      "promoText": "In winter, I have a special love for Montenegro. During this time of year, the sea becomes as smooth as glass, and the air is crystal clear and fresh. Walking along the shore is pure delight, with the crisp breeze filling your lungs and the sight of pristine white yachts captivating your gaze. It’s equally enchanting to wander aimlessly through the city streets, admiring the ancient stonework of the buildings and the vibrant splashes of ripe lemons and mandarins.",
+      "locations": {
+        "title": "Towns and locations:",
+        "kotor": "Kotor",
+        "bar": "Bar",
+        "hercegNovi": "Herceg Novi",
+        "perast": "Perast"
+      }
+    }
   }
 }

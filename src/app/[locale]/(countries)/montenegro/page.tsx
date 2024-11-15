@@ -2,12 +2,17 @@
 
 import React from "react";
 import Image from "next/image";
+import cn from "classnames";
+import { useTranslations } from "next-intl";
+
+import { Link } from "@/navigation";
 import useGetWindowWidth from "@/hooks/helpers/useGetWindowWidth";
 
 import s from "./style.module.scss";
 
-function page() {
+function Montenegro() {
   const windowWidth = useGetWindowWidth();
+  const t = useTranslations("countries.montenegro");
   return (
     <div className={s.wrapper}>
       <div className={s.content}>
@@ -52,25 +57,70 @@ function page() {
             </>
           )}
 
-          <div className={s.title}>Montenegro</div>
+          <div className={s.title}>{t("title")}</div>
         </section>
         <section className={s.section}>
           <h3></h3>
-          <p>
-            Больше всего я люблю Черногорию зимой. В это время года вода гладкая
-            как стекло а воздух чистый и прозрачный. Одно удовольствие гулять по
-            улочкам городов или по окрестным тропинкам
-          </p>
+          <p>{t("promoText")}</p>
         </section>
-        <ul>
-          <li>Херцег-Нови</li>
-          <li>Котор</li>
-          <li>Пераст</li>
-        </ul>
-        <a href="http://www.freepik.com">Designed by macrovector / Freepik</a>
+        <section className={cn(s.section, s.sectionList)}>
+          <div className={s.listBg}>
+            <div className={s.imgBg}>
+              <Image
+                src="/assets/images/countries/montenegro/main/list_bg.png"
+                alt="list-background"
+                width={4624}
+                height={2604}
+                sizes="100vw"
+                className={s.listBg}
+              />
+            </div>
+            <Image
+              src="/assets/images/countries/montenegro/main/stroke.png"
+              alt="stroke"
+              width={4008}
+              height={1143}
+              sizes="100vw"
+              className={s.stroke1}
+            />
+            <Image
+              src="/assets/images/countries/montenegro/main/stroke.png"
+              alt="stroke"
+              width={4008}
+              height={1143}
+              sizes="100vw"
+              className={s.stroke2}
+            />
+          </div>
+          <div className={s.content}>
+            <h3 className={s.sectionTitle}>{t("locations.title")}</h3>
+            <ul>
+              <li>
+                <Link className={s.point} href="/montenegro/hercegnovi">
+                  {t("locations.hercegNovi")}
+                </Link>
+              </li>
+              <li>
+                <Link className={s.point} href="/montenegro/kotor">
+                  {t("locations.kotor")}
+                </Link>
+              </li>
+              <li>
+                <Link className={s.point} href="/montenegro/perast">
+                  {t("locations.perast")}
+                </Link>
+              </li>
+              <li>
+                <Link className={s.point} href="/montenegro/bar">
+                  {t("locations.bar")}
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </section>
       </div>
     </div>
   );
 }
 
-export default page;
+export default Montenegro;

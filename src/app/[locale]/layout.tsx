@@ -1,10 +1,13 @@
-import Menu from "@/components/Menu";
-import Navigation from "@/components/Navigation";
-import { MenuContextProvider } from "@/contexts/menuContext/menuContextProvider";
 import { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Montserrat, Exo_2, Shantell_Sans } from "next/font/google";
+
+import Menu from "@/components/Menu";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
+import { MenuContextProvider } from "@/contexts/menuContext/menuContextProvider";
 
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
@@ -45,9 +48,9 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider messages={messages}>
           <MenuContextProvider>
-            <Navigation />
+            <Header />
             <Menu />
-            <main>{children}</main>
+            {children}
           </MenuContextProvider>
         </NextIntlClientProvider>
       </body>

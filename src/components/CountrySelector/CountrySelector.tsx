@@ -13,7 +13,7 @@ import cn from "classnames";
 import s from "./CountrySelector.module.scss";
 
 function CountrySelector() {
-  const [selected, setSelected] = React.useState(countries[0]);
+  const [selected, setSelected] = React.useState(countries[-1]);
   const [isOpen, setIsOpen] = React.useState(false);
   const t = useTranslations("countries");
 
@@ -51,7 +51,7 @@ function CountrySelector() {
                 className={`${s.item} ${country === selected ? s.active : ""}`}
                 onClick={handleSelect.bind(null, country)}
               >
-                <p className={s.langTitle}>{t(`${country}`)}</p>
+                <p className={s.langTitle}>{t(`${country}.title`)}</p>
               </Link>
             ))}
           </motion.div>

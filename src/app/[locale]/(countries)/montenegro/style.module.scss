@@ -54,7 +54,81 @@
 }
 
 .section {
+  position: relative;
   @include blockContent();
-  padding-top: $padding_general;
-  padding-bottom: $padding_general;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.sectionList {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.content {
+  min-height: 500px;
+}
+
+.sectionTitle {
+  @include sectionTitle();
+  color: #fff;
+  text-align: left;
+}
+
+.listBg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+
+  object-fit: cover;
+
+  z-index: -1;
+}
+
+.imgBg::after {
+  position: absolute;
+  content: "";
+
+  width: 100%;
+  height: 100%;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0) 0%,
+    rgb(1 19 38 / 85%) 100%
+  );
+}
+
+.stroke1 {
+  position: absolute;
+  width: 100%;
+  height: auto;
+
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%) translateY(-50%);
+  object-fit: cover;
+}
+.stroke2 {
+  position: absolute;
+  width: 100%;
+  height: auto;
+
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+
+  object-fit: cover;
+}
+
+.point {
+  @include pageParagraphText();
+  color: #fff;
+  text-align: left;
+
+  line-height: 150%;
 }
