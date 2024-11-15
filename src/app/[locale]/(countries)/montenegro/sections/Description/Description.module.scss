@@ -1,0 +1,10 @@
+@import "~/src/styles/mixins";
+
+.promoText {
+  @include pageParagraphText();
+  color: #000;
+
+  text-align: left;
+  text-indent: 24px;
+  font-family: var(--font-shantell);
+}
