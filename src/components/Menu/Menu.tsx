@@ -1,18 +1,20 @@
 "use client";
 
-import { countries } from "@/constants/countries";
-import { useMenuContext } from "@/contexts/menuContext/useMenuContext";
-import { Link } from "@/navigation";
-import { Country } from "@/types/countries";
-import { slideLeft } from "@/utils/motion";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React from "react";
+
+import { countries } from "@/constants/countries";
+import { useMenuContext } from "@/contexts/menuContext/useMenuContext";
+import { Link } from "@/i18n/routing";
+import { Country } from "@/types/countries";
+import { slideLeft } from "@/utils/motion";
+
+import Burger from "../Burger";
 import LanguageSelector from "../LanguageSelector";
 
 import s from "./Menu.module.scss";
-import Burger from "../Burger";
 
 const Menu = () => {
   const { isOpen, setIsOpen } = useMenuContext();

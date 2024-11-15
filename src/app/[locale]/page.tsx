@@ -1,11 +1,20 @@
 import { useTranslations } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 import Image from "next/image";
 import cn from "classnames";
 
 import s from "./style.module.scss";
 
-export default function HomePage() {
+export default function HomePage({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  setRequestLocale(locale);
+
   const t = useTranslations("HomePage");
+
   return (
     <main className={s.background}>
       <div className={s.cloudsContainer}>
@@ -128,4 +137,8 @@ export default function HomePage() {
       </div>
     </main>
   );
+}
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
 }

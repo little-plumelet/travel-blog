@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
-import { Link } from "@/navigation";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+
+import { Link } from "@/i18n/routing";
 
 import s from "./Logo.module.scss";
 

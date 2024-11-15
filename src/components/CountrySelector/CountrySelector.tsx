@@ -6,7 +6,7 @@ import { Country } from "@/types/countries";
 import Icon from "../common/Icon";
 import { AnimatePresence, motion } from "framer-motion";
 import { dropDown } from "@/utils/motion";
-import { Link } from "@/navigation";
+import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import cn from "classnames";
 

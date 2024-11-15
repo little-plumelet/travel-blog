@@ -1,10 +1,11 @@
 "use client";
 
-import React from "react";
-import { useLocale } from "next-intl";
-import { usePathname, Link } from "@/navigation";
-import { Language } from "@/types/languages";
 import cn from "classnames";
+import { useLocale } from "next-intl";
+import React from "react";
+
+import { Link, usePathname } from "@/i18n/routing";
+import { Language } from "@/types/languages";
 
 import s from "./LanguageSelector.module.scss";
 

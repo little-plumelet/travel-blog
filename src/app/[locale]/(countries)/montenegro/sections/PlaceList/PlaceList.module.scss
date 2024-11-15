@@ -1,0 +1,19 @@
+@import "~/src/styles/mixins";
+
+.title {
+  @include sectionTitle();
+  text-align: left;
+}
+
+.point {
+  list-style-type: circle;
+  list-style-position: inside;
+}
+
+.pointLink {
+  @include pageParagraphText();
+  text-align: left;
+  color: inherit;
+
+  line-height: 200%;
+}
