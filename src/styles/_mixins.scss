@@ -54,6 +54,7 @@
 @mixin pageParagraphText() {
   font-weight: 400;
   font-size: 14px;
+  line-height: 120%;
   text-align: center;
 
   @include tablet {

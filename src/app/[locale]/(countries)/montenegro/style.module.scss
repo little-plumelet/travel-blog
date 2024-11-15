@@ -132,3 +132,11 @@
 
   line-height: 150%;
 }
+
+.promoText {
+  @include pageParagraphText();
+
+  text-align: left;
+  text-indent: 24px;
+  font-family: var(--font-shantell);
+}

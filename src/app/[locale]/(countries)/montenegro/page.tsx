@@ -61,7 +61,7 @@ function Montenegro() {
         </section>
         <section className={s.section}>
           <h3></h3>
-          <p>{t("promoText")}</p>
+          <p className={s.promoText}>{t("promoText")}</p>
         </section>
         <section className={cn(s.section, s.sectionList)}>
           <div className={s.listBg}>
