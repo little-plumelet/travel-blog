@@ -11,26 +11,26 @@ function PlaceList({ className }: PlaceListProps) {
   const t = useTranslations("countries.montenegro");
   return (
     <div className={className}>
-      <h3 className={s.title}>{t("locations.title")}</h3>
+      <h3 className={s.title}>{t("locationsListTitle")}</h3>
       <ul>
         <li className={s.point}>
           <Link className={s.pointLink} href="/montenegro/hercegnovi">
-            {t("locations.hercegNovi")}
+            {t("locations.hercegNovi.title")}
           </Link>
         </li>
         <li className={s.point}>
           <Link className={s.pointLink} href="/montenegro/kotor">
-            {t("locations.kotor")}
+            {t("locations.kotor.title")}
           </Link>
         </li>
         <li className={s.point}>
           <Link className={s.pointLink} href="/montenegro/perast">
-            {t("locations.perast")}
+            {t("locations.perast.title")}
           </Link>
         </li>
         <li className={s.point}>
           <Link className={s.pointLink} href="/montenegro/bar">
-            {t("locations.bar")}
+            {t("locations.bar.title")}
           </Link>
         </li>
       </ul>

@@ -14,7 +14,7 @@ function Locations({ className }: LocationsProps) {
       <div className={s.listBg}>
         <div className={s.imgBg}>
           <Image
-            src="/assets/images/countries/montenegro/main/list_bg.png"
+            src="/assets/images/countries/montenegro/main/list_bg.webp"
             alt="list-background"
             width={4624}
             height={2604}
@@ -23,7 +23,7 @@ function Locations({ className }: LocationsProps) {
           />
         </div>
         <Image
-          src="/assets/images/countries/montenegro/main/stroke.png"
+          src="/assets/images/countries/montenegro/main/stroke.webp"
           alt="stroke"
           width={4008}
           height={1143}
@@ -31,7 +31,7 @@ function Locations({ className }: LocationsProps) {
           className={s.stroke1}
         />
         <Image
-          src="/assets/images/countries/montenegro/main/stroke.png"
+          src="/assets/images/countries/montenegro/main/stroke.webp"
           alt="stroke"
           width={4008}
           height={1143}

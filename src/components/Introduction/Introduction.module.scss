@@ -1,0 +1,21 @@
+@import "~/src/styles/mixins";
+
+.section {
+  position: relative;
+  width: 100%;
+}
+
+.title {
+  @include pageTitle();
+  color: #fff;
+  opacity: 1;
+  z-index: 2;
+
+  position: absolute;
+  right: 14%;
+  bottom: 24%;
+
+  @include tablet() {
+    bottom: 32%;
+  }
+}
