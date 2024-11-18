@@ -9,7 +9,7 @@ import Frame from "@/types/frames";
 
 import s from "./FramedBackground.module.scss";
 
-type FramedBackgroundProps = {
+export type FramedBackgroundProps = {
   image: string;
   imageMobile?: string;
   frame: Frame;

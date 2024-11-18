@@ -1,18 +1,16 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 
-import FramedBackground from "../FramedBackground/FramedBackground";
-import Frame from "@/types/frames";
+import FramedBackground, {
+  FramedBackgroundProps,
+} from "../FramedBackground/FramedBackground";
 
 import s from "./Introduction.module.scss";
 
 type IntroductionProps = {
   country: string;
   place?: string;
-  image: string;
-  imageMobile?: string;
-  frame: Frame;
-};
+} & FramedBackgroundProps;
 
 function Introduction({
   country,
