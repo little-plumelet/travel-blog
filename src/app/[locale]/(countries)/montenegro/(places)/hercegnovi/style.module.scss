@@ -1,0 +1,23 @@
+.photoCardWrapper {
+  div {
+    // --penLine-transform: translate(10px, 40px);
+
+    --decor-transform: rotate(45deg);
+    --decor-animation: bounce 20s infinite linear;
+
+    --clip-transform: scale(1.5);
+
+    --imgBg-filter: brightness(0.9);
+    --imgBg-transform: rotate(4deg);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+}

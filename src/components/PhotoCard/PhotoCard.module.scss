@@ -1,0 +1,108 @@
+@import "~/src/styles/mixins";
+
+$padding: 16px;
+$margin: 40px;
+
+.wrapper {
+  position: relative;
+  margin: $margin;
+
+  /* Default CSS variable values */
+  --penLine-transform: none;
+
+  --decor-transform: none;
+  --decor-animation: none;
+
+  --clip-transform: none;
+
+  --imgBg-filter: none;
+  --imgBg-transform: none;
+}
+
+.card {
+  position: relative;
+  padding: $padding;
+  background-color: rgb(255, 252, 247);
+
+  box-shadow: 6px -6px 5px -6px #57480b;
+}
+
+.imgBg {
+  position: absolute;
+  z-index: 0;
+
+  width: 100%;
+  height: auto;
+
+  left: 8px;
+  top: -5px;
+  transform: rotate(4deg);
+
+  border: $padding solid rgb(255, 252, 247);
+  box-shadow: 6px -6px 5px -6px rgba(87, 72, 11, 1);
+  object-fit: cover;
+
+  filter: var(--imgBg-filter);
+  transform: var(--imgBg-transform);
+
+  @include tablet() {
+    width: calc(100% - $padding * 2);
+    height: auto;
+    max-height: none;
+  }
+}
+
+.img {
+  position: relative;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: cover;
+
+  @include tablet() {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+}
+
+.clip {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+
+  z-index: 1;
+
+  transform: var(--clip-transform);
+}
+
+.decor {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+
+  z-index: 1;
+
+  transform: var(--decor-transform);
+  animation: var(--decor-animation);
+}
+
+.penLine {
+  width: 70%;
+  height: auto;
+  max-width: 300px;
+  position: absolute;
+  opacity: 0.8;
+  top: $padding / 2;
+  left: 0;
+
+  z-index: 1;
+
+  transform: var(--penLine-transform);
+}
+
+.description {
+  margin-top: 8px;
+  text-align: center;
+}

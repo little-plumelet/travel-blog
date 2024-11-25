@@ -24,6 +24,7 @@
 
   left: 50%;
   transform: translate(-50%, 0.1%);
+  filter: drop-shadow(4px -4px 3px #212d4a);
 
   @include tablet() {
     width: 100%;
