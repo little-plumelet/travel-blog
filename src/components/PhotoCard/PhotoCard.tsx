@@ -12,32 +12,30 @@ type PhotoCardProps = {
   alt: string;
   imageMobile?: string;
   description?: string;
-  className?: string;
-  clipLeft?: number;
-  clipTop?: number;
-  bgAngle?: number;
-  bgTop?: number;
-  bgLeft?: number;
+  decorVariant?: "star-fish" | "urchin";
 };
 function PhotoCard({
   description,
   image,
   alt,
   imageMobile = image,
+  decorVariant,
 }: PhotoCardProps) {
   const windowWidth = useGetWindowWidth();
-  const imageSrc = windowWidth < 780 ? imageMobile : image;
-  const imageWidth = windowWidth < 780 ? 1500 : 4000;
+  const imageSrc = windowWidth < 1000 ? imageMobile : image;
+  const imageWidth = windowWidth < 1000 ? 1500 : 4000;
 
   return (
     <div className={s.wrapper}>
-      <Image
-        src={"/assets/images/decorations/sea/star-fish.webp"}
-        width={100}
-        height={100}
-        alt="decor"
-        className={s.decor}
-      />
+      {decorVariant && (
+        <Image
+          src={`/assets/images/decorations/sea/${decorVariant}.webp`}
+          width={100}
+          height={100}
+          alt="decor"
+          className={s.decor}
+        />
+      )}
       <Image
         src={"/assets/images/pen-lines/1.webp"}
         width={800}

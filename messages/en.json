@@ -23,7 +23,10 @@
           "title": "Bar"
         },
         "hercegNovi": {
-          "title": "Herceg Novi"
+          "title": "Herceg Novi",
+          "articles": {
+            "2": ""
+          }
         },
         "perast": {
           "title": "Perast"

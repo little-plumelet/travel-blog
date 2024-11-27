@@ -1,86 +1,64 @@
-import FramedBackground from "@/components/FramedBackground/FramedBackground";
-import Introduction from "@/components/Introduction";
-import PhotoCard from "@/components/PhotoCard/PhotoCard";
 import Image from "next/image";
 import React from "react";
+
+import BlogPhotoArticle from "@/components/BlogPhotoArticle";
+import Introduction from "@/components/Introduction";
+import PhotoCard from "@/components/PhotoCard/PhotoCard";
 
 import s from "./style.module.scss";
 
 function HercegNovi() {
   return (
-    <div
-      style={{
-        backgroundColor: "wheat",
-        width: "100%",
-        height: "100%",
-        position: "relative",
-      }}
-    >
-      <Image
-        src="/assets/images/textures/white-paper-bg.webp"
-        alt="paper-texture"
-        sizes="100vw"
-        fill
-        style={{
-          mixBlendMode: "multiply",
-          filter: "brightness(90%)",
-          backgroundColor: "#f9eeda",
-        }}
-      />
-      <Introduction
-        country="montenegro"
-        place="hercegNovi"
-        image="/assets/images/countries/montenegro/herceg-novi/intro-bg.webp"
-        imageMobile="/assets/images/countries/montenegro/herceg-novi/intro-bg_mob.webp"
-        frame={2}
-      />
-      <div>
-        Херцег-Нови - старинный и очень симпатичный городок,
-        достопримечательности которого можно обойти за один, два дня.
-        Центральная площадь, часовая башня и православная церковь Михаила
-        Архангела. Еще есть две крепости - морская крепость (Forte Mare) и
-        крепость Канли-Кула. Однако, самое лучшая часть города для меня -
-        набережная. Когда я выбирала в какой город Черногории сделать базой для
-        зимовки, гуглила самую красивую набережную которая нашлась в
-        Херцег-Нови. Гулять вдоль моря совершенно не надоедает. Вода в Адриатике
-        потрясающего цвета. Каждый день что-то новое - волны захлестывают
-        дорожки после шторма, птицы охотятся за рыбой, парусные яхты ловят
-        ветер,ныряльщик с оранжевым сигнальным шаром собирает морские деликатесы
-        на завтрак.{" "}
-      </div>
-      <div className={s.photoCardWrapper}>
-        <PhotoCard
-          image="/assets/images/countries/montenegro/herceg-novi/1.webp"
-          imageMobile="/assets/images/countries/montenegro/herceg-novi/1_mob.webp"
-          alt=""
+    <>
+      <div className={s.wrapper}>
+        <Image
+          src="/assets/images/textures/white-paper-bg.webp"
+          alt="paper-texture"
+          sizes="100vw"
+          fill
+          className={s.background}
         />
+        <Image
+          src="/assets/images/frames/circle.svg"
+          alt="circle-frame"
+          sizes="100vw"
+          fill
+          className={s.bgDecor}
+        />
+        <Introduction
+          country="montenegro"
+          place="hercegNovi"
+          image="/assets/images/countries/montenegro/herceg-novi/intro-bg.webp"
+          imageMobile="/assets/images/countries/montenegro/herceg-novi/intro-bg_mob.webp"
+          frame={2}
+        />
+        <BlogPhotoArticle
+          textKey="countries.montenegro.locations.hercegNovi.articles.1"
+          photoWrapperClassName={s.photoCardWrapper}
+          isMirrored
+        >
+          <PhotoCard
+            image="/assets/images/countries/montenegro/herceg-novi/1.webp"
+            imageMobile="/assets/images/countries/montenegro/herceg-novi/1_mob.webp"
+            alt="stone in the Adriatic sea"
+            decorVariant="star-fish"
+          />
+        </BlogPhotoArticle>
+
+        <BlogPhotoArticle
+          textKey="countries.montenegro.locations.hercegNovi.articles.2"
+          photoWrapperClassName={s.photoCardWrapper_2}
+        >
+          <PhotoCard
+            image="/assets/images/countries/montenegro/herceg-novi/2.webp"
+            imageMobile="/assets/images/countries/montenegro/herceg-novi/2_mob.webp"
+            alt="stone in the Adriatic sea"
+            description="tonnel"
+            decorVariant="urchin"
+          />
+        </BlogPhotoArticle>
       </div>
-      <div>
-        На одном конце набережной гостиничный комплекс Лазуре и его марина - там
-        можно полюбоваться на яхты или договориться о морской прогулке, на
-        другом конце - самый современный район - Игало с магазинами и кафе.
-        Вдоль набережной расположено огромное количество кафан и ресторанов. Мне
-        нравится купить кусок горячей пиццы на вынос, сесть на лавочку и жевать
-        глядя на воду и птиц. Вечером же приятно красиво посидеть за столиком с
-        бокалом вина или ракии. Херцег-Нови это про созерцание и гедонизм. Моя
-        любимая часть в кафе - подача чая. Обязательно принесут лимон и мед. Мы
-        остановились на третьей линии от моря в симпатичной студии. Во дворе
-        росло лимонное дерево и хозяин дома разрешил нам рвать по лимону в день.
-        Все-таки приятно пить чай с лимоном, который ты не купил а сорвал
-        собственной рукой. Внимание: Чтобы гулять по Херцег-Нови нужно быть
-        достаточно спортивным человеком, не зря Херцег-Нови называется городом
-        лестниц, прогуляться от набережной к центру города и обратно означает
-        серьезно подкачать попу и ноги, чему я весьма радовалась после
-        нескольких месяцев таких прогулок ;-).
-        <p>
-          Довольно непривычно было то что в воскресенье все магазины закрыты, и
-          прилет в воскресенье означает 'голодную смерть' - но спасение есть -
-          кафе/рестораны и заправки работают. Еще все очень специализированно,
-          хлеб и булочки продаются в пекаре, мясо в месаре а фрукты - во
-          фруктовых лавках.
-        </p>
-      </div>
-    </div>
+    </>
   );
 }
 

@@ -1,4 +1,22 @@
 @import "~/src/styles/mixins";
+/**
+    To set individual style for the card you can use CSS variables 
+    in the parent component
+
+    --penLine-transform: translate(50px, 0px);
+
+    --decor-transform: rotate(10deg) scale(2);
+    --decor-left: auto;
+    --decor-right: auto;
+    --decor-animation: bounce 20s infinite linear;
+
+    --clip-transform: scale(1.5) translate(-80%, 0px);
+    --clip-left: 16%;
+    --clip-right: auto;
+
+    --imgBg-filter: brightness(0.9);
+    --imgBg-transform: rotate(-5deg);
+*/
 
 $padding: 16px;
 $margin: 40px;
@@ -70,7 +88,8 @@ $margin: 40px;
 .clip {
   position: absolute;
   top: -10px;
-  right: 20px;
+  right: var(--clip-right, 8%);
+  left: var(--clip-left, auto);
 
   z-index: 1;
 
@@ -79,8 +98,8 @@ $margin: 40px;
 
 .decor {
   position: absolute;
-  bottom: -20px;
-  right: -20px;
+  bottom: var(--decor-bottom, -20px);
+  right: var(--decor-right, -20px);
 
   z-index: 1;
 
