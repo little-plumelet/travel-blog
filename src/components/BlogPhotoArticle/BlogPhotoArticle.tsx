@@ -1,6 +1,6 @@
 import React from "react";
 import cn from "classnames";
-import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 import PhotoCard from "../PhotoCard/PhotoCard";
 
@@ -9,24 +9,34 @@ import s from "./BlogPhotoArticle.module.scss";
 type BlogPhotoArticleProps = {
   photoWrapperClassName?: string;
   children: React.ReactElement<typeof PhotoCard>;
-  textKey: string;
+  text: string;
+  descriptionBackground?: "circle" | "circle_2";
   isMirrored?: boolean;
 };
 function BlogPhotoArticle({
-  textKey,
+  text,
   children,
   photoWrapperClassName,
   isMirrored = false,
+  descriptionBackground = "circle",
 }: BlogPhotoArticleProps) {
-  const t = useTranslations();
   return (
     <article className={cn(s.block, { [s.blockMirror]: isMirrored })}>
-      <div
-        className={s.description}
-        dangerouslySetInnerHTML={{
-          __html: t.raw(textKey),
-        }}
-      />
+      <div className={s.descriptionWrapper}>
+        <Image
+          className={s.descriptionBackground}
+          src={`/assets/images/frames/${descriptionBackground}.svg`}
+          width={1300}
+          height={1300}
+          alt="description background"
+        />
+        <div
+          className={s.description}
+          dangerouslySetInnerHTML={{
+            __html: text,
+          }}
+        />
+      </div>
       {/* <p>
           На одном конце набережной гостиничный комплекс Лазуре и его марина -
           там можно полюбоваться на яхты или договориться о морской прогулке, на

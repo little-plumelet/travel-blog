@@ -124,4 +124,6 @@ $margin: 40px;
 .description {
   margin-top: 8px;
   text-align: center;
+  @include pageParagraphText();
+  font-family: var(--font-shantell);
 }

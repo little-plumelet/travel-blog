@@ -1,0 +1,43 @@
+@import "~/src/styles/mixins";
+
+.photoCardWrapper {
+  div {
+    // --penLine-transform: translate(10px, 40px);
+
+    --decor-transform: rotate(45deg);
+    --decor-animation: bounce 20s infinite linear;
+
+    --clip-transform: scale(1.5);
+
+    --imgBg-filter: brightness(0.9);
+    --imgBg-transform: rotate(4deg);
+  }
+}
+
+.photoCardWrapper_2 {
+  div {
+    --penLine-transform: translate(50px, 0px);
+
+    --decor-transform: rotate(10deg) scale(2);
+    --decor-left: auto;
+    --decor-right: auto;
+    // --decor-animation: bounce 20s infinite linear;
+
+    --clip-transform: scale(1.5) translate(-80%, 0px);
+    --clip-left: 16%;
+    --clip-right: auto;
+
+    --imgBg-filter: brightness(0.9);
+    --imgBg-transform: rotate(-5deg);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+}
