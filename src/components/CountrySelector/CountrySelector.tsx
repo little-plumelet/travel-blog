@@ -1,21 +1,30 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { countries } from "@/constants/countries";
 import { Country } from "@/types/countries";
 import Icon from "../common/Icon";
 import { AnimatePresence, motion } from "framer-motion";
 import { dropDown } from "@/utils/motion";
-import { Link } from "@/i18n/routing";
+import { Link, usePathname } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import cn from "classnames";
 
 import s from "./CountrySelector.module.scss";
 
 function CountrySelector() {
-  const [selected, setSelected] = React.useState(countries[-1]);
-  const [isOpen, setIsOpen] = React.useState(false);
+  const pathname = usePathname();
+  const [selected, setSelected] = useState<Country | null>(
+    () => (pathname.split("/")[1] as Country) || countries[-1]
+  );
+  const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations("countries");
+
+  useEffect(() => {
+    if (!countries.includes(pathname.split("/")[1] as Country)) {
+      setSelected(null);
+    }
+  }, [pathname]);
 
   const toggle = () => {
     setIsOpen((prev) => !prev);

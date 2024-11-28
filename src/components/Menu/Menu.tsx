@@ -3,11 +3,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 
 import { countries } from "@/constants/countries";
 import { useMenuContext } from "@/contexts/menuContext/useMenuContext";
-import { Link } from "@/i18n/routing";
+import { Link, usePathname } from "@/i18n/routing";
 import { Country } from "@/types/countries";
 import { slideLeft } from "@/utils/motion";
 
@@ -18,8 +18,17 @@ import s from "./Menu.module.scss";
 
 const Menu = () => {
   const { isOpen, setIsOpen } = useMenuContext();
-  const [selected, setSelected] = React.useState(countries[0]);
+  const pathname = usePathname();
+  const [selected, setSelected] = React.useState<Country | null>(
+    () => (pathname.split("/")[1] as Country) || countries[-1]
+  );
   const t = useTranslations();
+
+  useEffect(() => {
+    if (!countries.includes(pathname.split("/")[1] as Country)) {
+      setSelected(null);
+    }
+  }, [pathname]);
 
   const closeMenu = (e: any) => {
     setIsOpen(false);
