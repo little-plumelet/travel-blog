@@ -31,6 +31,16 @@ function HercegNovi() {
         frame={2}
       />
       <Articles />
+      <div className={s.bottomStrokeWrapper}>
+        <Image
+          src="/assets/images/strokes/stroke_2.png"
+          alt="paper-texture"
+          sizes="100vw"
+          width={4000}
+          height={600}
+          className={s.bottomStroke}
+        />
+      </div>
     </div>
   );
 }
