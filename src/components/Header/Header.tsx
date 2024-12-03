@@ -26,7 +26,6 @@ function Header() {
     }
   });
 
-  console.log(isVisible);
   return (
     <motion.header
       className={s.wrapper}

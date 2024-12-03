@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 
 import Introduction from "@/components/Introduction";
+import Video from "@/components/Video";
+
 import Articles from "./parts/Articles";
 
 import s from "./style.module.scss";
@@ -31,6 +33,7 @@ function HercegNovi() {
         frame={2}
       />
       <Articles />
+      <Video src="https://www.youtube.com/embed/kkKii955-Ck?si=-hkC0HYJJJnGd9hp" />
       <div className={s.bottomStrokeWrapper}>
         <Image
           src="/assets/images/strokes/stroke_2.png"
