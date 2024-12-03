@@ -1,1 +1,1 @@
-type IconVariant = "arrow_down";
+type IconVariant = "arrow_down" | "instagram" | "youtube";

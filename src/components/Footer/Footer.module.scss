@@ -13,7 +13,59 @@
   font-size: 14px;
   color: var(--nav-gray);
 
-  @media (width >= $mobile) {
+  @media (width >= $ssTablet) {
     flex-direction: row;
+  }
+}
+
+.refs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  @media (width >= $ssTablet) {
+    align-items: flex-start;
+  }
+}
+
+.link {
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  text-align: center;
+
+  @include tablet {
+    font-size: 20px;
+  }
+
+  @include desktop {
+    font-size: 24px;
+  }
+}
+
+.youTube {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 120%;
+  text-align: center;
+
+  @include tablet {
+    font-size: 24px;
+  }
+
+  @include desktop {
+    font-size: 28px;
   }
 }
