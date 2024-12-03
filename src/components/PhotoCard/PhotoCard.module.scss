@@ -42,7 +42,7 @@ $margin: 40px;
   padding: $padding;
   background-color: rgb(255, 252, 247);
 
-  box-shadow: 6px -6px 5px -6px #57480b;
+  box-shadow: 8px -8px 8px -8px var(--common-shadow);
 }
 
 .imgBg {
@@ -87,6 +87,8 @@ $margin: 40px;
 
 .clip {
   position: absolute;
+  width: 40px;
+  height: auto;
   top: -10px;
   right: var(--clip-right, 8%);
   left: var(--clip-left, auto);

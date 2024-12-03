@@ -7,7 +7,7 @@
     --decor-transform: rotate(45deg);
     --decor-animation: bounce 20s infinite linear;
 
-    --clip-transform: scale(1.5);
+    --clip-transform: scale(1.5) rotate(-90deg);
 
     --imgBg-filter: brightness(0.9);
     --imgBg-transform: rotate(4deg);
@@ -23,8 +23,8 @@
     --decor-right: auto;
     // --decor-animation: bounce 20s infinite linear;
 
-    --clip-transform: scale(1.5) translate(-80%, 0px);
-    --clip-left: 16%;
+    --clip-transform: scale(1.35) rotate(90deg);
+    --clip-left: 10%;
     --clip-right: auto;
 
     --imgBg-filter: brightness(0.9);

@@ -52,9 +52,9 @@ function PhotoCard({
         className={s.imgBg}
       />
       <Image
-        src={"/assets/icons/clip.svg"}
-        width={50}
-        height={50}
+        src={"/assets/images/decorations/stationary/scotch.webp"}
+        width={350}
+        height={220}
         alt="clip"
         className={s.clip}
       />
