@@ -32,7 +32,7 @@ function FramedBackground({
         src={imageSrc}
         alt="lagoon"
         width={imageWidth}
-        height={2200}
+        height={2400}
         sizes="100vw"
         className={s.img}
         priority
