@@ -92,7 +92,7 @@
   right: var(--clip-right, 8%);
   left: var(--clip-left, auto);
 
-  z-index: 1;
+  z-index: 2;
 
   transform: var(--clip-transform);
 }
@@ -102,7 +102,7 @@
   bottom: var(--decor-bottom, -20px);
   right: var(--decor-right, -20px);
 
-  z-index: 1;
+  z-index: 2;
 
   transform: var(--decor-transform);
   animation: var(--decor-animation);
@@ -117,7 +117,7 @@
   top: $photoPadding / 2;
   left: 0;
 
-  z-index: 1;
+  z-index: 2;
 
   transform: var(--penLine-transform);
 }

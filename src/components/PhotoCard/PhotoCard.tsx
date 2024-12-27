@@ -1,20 +1,25 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
+import React, { useState } from "react";
 
+import PhotoCardSwiper from "@/components/PhotoCardSwiper";
 import useGetWindowWidth from "@/hooks/helpers/useGetWindowWidth";
+import { Slide } from "@/types/slides";
 
 import s from "./PhotoCard.module.scss";
+import { useTranslations } from "next-intl";
 
 type PhotoCardProps = {
-  image: string;
-  alt: string;
+  images?: Array<Slide>;
+  image?: string;
+  alt?: string;
   imageMobile?: string;
   description?: string;
   decorVariant?: "star-fish" | "urchin";
 };
 function PhotoCard({
+  images,
   description,
   image,
   alt,
@@ -24,6 +29,12 @@ function PhotoCard({
   const windowWidth = useGetWindowWidth();
   const imageSrc = windowWidth < 1000 ? imageMobile : image;
   const imageWidth = windowWidth < 1000 ? 1500 : 4000;
+  const t = useTranslations();
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleSlideChange = (swiper: any) => {
+    setActiveIndex(swiper.activeIndex);
+  };
 
   return (
     <div className={s.wrapper}>
@@ -44,8 +55,8 @@ function PhotoCard({
         className={s.penLine}
       />
       <Image
-        src={imageSrc}
-        alt={alt}
+        src={images?.length ? images[0].imageSrc : imageSrc ?? ""}
+        alt={images?.length ? images[0].alt : alt ?? "image"}
         width={imageWidth}
         height={2200}
         sizes="100vw"
@@ -57,17 +68,35 @@ function PhotoCard({
         height={220}
         alt="clip"
         className={s.clip}
+        loading="lazy"
       />
       <div className={s.card}>
-        <Image
-          src={imageSrc}
-          alt={alt}
-          width={imageWidth}
-          height={2200}
-          sizes="100vw"
-          className={s.img}
-        />
-        {description && <p className={s.description}>{description}</p>}
+        {!!images?.length && (
+          <PhotoCardSwiper
+            images={images}
+            imageWidth={imageWidth}
+            isMobile={windowWidth < 1000}
+            handleSlideChange={handleSlideChange}
+          />
+        )}
+        {!images?.length && imageSrc && (
+          <>
+            <Image
+              src={imageSrc}
+              alt={alt ?? "image"}
+              width={imageWidth}
+              height={2200}
+              sizes="100vw"
+              className={s.img}
+            />
+          </>
+        )}
+        {!images?.length && description && (
+          <p className={s.description}>{t(description)}</p>
+        )}
+        {images && images[activeIndex]?.description && (
+          <p className={s.description}>{t(images[activeIndex].description)}</p>
+        )}
       </div>
     </div>
   );

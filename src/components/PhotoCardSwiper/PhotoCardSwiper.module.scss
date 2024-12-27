@@ -1,0 +1,23 @@
+@import "~/src/styles/mixins";
+
+.img {
+  position: relative;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: cover;
+
+  @include tablet() {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+}
+
+.description {
+  margin-top: 8px;
+  text-align: left;
+  @include pageParagraphText();
+  font-family: var(--font-shantell);
+}

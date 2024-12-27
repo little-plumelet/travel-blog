@@ -125,3 +125,13 @@ a {
   color: inherit;
   font-weight: 600;
 }
+
+.swiper-pagination-bullet {
+  background-color: #ffffff97 !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+}
