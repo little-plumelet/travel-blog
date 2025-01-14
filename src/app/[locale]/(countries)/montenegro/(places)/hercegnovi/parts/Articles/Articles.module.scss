@@ -44,12 +44,13 @@
   }
 }
 
-.blot_1 {
+.blot_1,
+.blot_3 {
   position: absolute;
   top: -15%;
   z-index: -1;
-  left: -20%;
-  filter: opacity(0.45) invert(0.8);
+  left: -7%;
+  filter: opacity(0.3) invert(0.8);
   transform: rotate(45deg);
 }
 
@@ -57,7 +58,12 @@
   position: absolute;
   bottom: -15%;
   z-index: -1;
-  right: -20%;
-  filter: opacity(0.45) invert(0.8);
+  right: -8%;
+  filter: opacity(0.3) invert(0.8);
   transform: rotate(45deg);
+}
+
+.blot_3 {
+  left: -10%;
+  transform: rotate(15deg);
 }

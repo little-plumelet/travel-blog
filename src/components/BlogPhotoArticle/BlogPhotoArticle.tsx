@@ -12,6 +12,7 @@ type BlogPhotoArticleProps = {
   text: string;
   descriptionBackground?: "circle" | "circle_2";
   isMirrored?: boolean;
+  textDecorationImage?: React.ReactElement<typeof Image>;
 };
 function BlogPhotoArticle({
   text,
@@ -19,9 +20,11 @@ function BlogPhotoArticle({
   photoWrapperClassName,
   isMirrored = false,
   descriptionBackground = "circle",
+  textDecorationImage,
 }: BlogPhotoArticleProps) {
   return (
     <article className={cn(s.block, { [s.blockMirror]: isMirrored })}>
+      {textDecorationImage && <>{textDecorationImage}</>}
       <div className={s.descriptionWrapper}>
         <Image
           className={s.descriptionBackground}

@@ -17,9 +17,7 @@ function Articles() {
         photoWrapperClassName={s.photoCardWrapper}
         isMirrored
         descriptionBackground="circle_2"
-      >
-        <>
-          <PhotoCard images={baseImages} decorVariant="star-fish" />
+        textDecorationImage={
           <Image
             className={s.blot_1}
             src="/assets/images/decorations/blots/1.png"
@@ -27,15 +25,15 @@ function Articles() {
             width="300"
             height="300"
           />
-        </>
+        }
+      >
+        <PhotoCard images={baseImages} decorVariant="star-fish" />
       </BlogPhotoArticle>
 
       <BlogPhotoArticle
         text={t.raw("articles.2.text")}
         photoWrapperClassName={s.photoCardWrapper_2}
-      >
-        <>
-          <PhotoCard images={articleSecondImages} />
+        textDecorationImage={
           <Image
             className={s.blot_2}
             src="/assets/images/decorations/blots/2.png"
@@ -43,9 +41,25 @@ function Articles() {
             width="300"
             height="300"
           />
-        </>
+        }
+      >
+        <PhotoCard images={articleSecondImages} />
       </BlogPhotoArticle>
-      <BlogPhotoArticle text={t.raw("articles.3.text")} />
+
+      <BlogPhotoArticle
+        text={t.raw("articles.3.text")}
+        descriptionBackground="circle_2"
+        textDecorationImage={
+          <Image
+            className={s.blot_3}
+            src="/assets/images/decorations/blots/1.png"
+            alt="blot"
+            width="300"
+            height="300"
+          />
+        }
+      />
+
       <br />
     </>
   );
