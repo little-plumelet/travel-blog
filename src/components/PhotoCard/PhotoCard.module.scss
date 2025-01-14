@@ -32,6 +32,10 @@
 
   --imgBg-filter: none;
   --imgBg-transform: none;
+
+  @include tablet() {
+    margin: $photoMarginTablet;
+  }
 }
 
 .card {

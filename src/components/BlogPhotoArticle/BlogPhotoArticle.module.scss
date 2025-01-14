@@ -74,12 +74,12 @@
   width: 100%;
 
   @include tablet() {
-    min-width: 40vw;
+    min-width: 45vw;
     max-width: 50vw;
   }
 
   @include laptop() {
-    min-width: 40vw;
-    max-width: 60vw;
+    min-width: 55vw;
+    max-width: 70vw;
   }
 }
