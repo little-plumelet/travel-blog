@@ -45,6 +45,8 @@ function Articles() {
           />
         </>
       </BlogPhotoArticle>
+      <BlogPhotoArticle text={t.raw("articles.3.text")} />
+      <br />
     </>
   );
 }
