@@ -135,3 +135,9 @@ a {
   background-color: #ffffff !important;
   opacity: 1 !important;
 }
+
+// this style fixes strange error in swiper width calculation like swiper width: 1.67771e+07px
+// https://github.com/nolimits4web/swiper/issues/5289
+.swiper .swiper-wrapper {
+  width: 0 !important;
+}

@@ -55,7 +55,13 @@ function PhotoCard({
         className={s.penLine}
       />
       <Image
-        src={images?.length ? images[0].imageSrc : imageSrc ?? ""}
+        src={
+          images?.length
+            ? windowWidth < 1000
+              ? images[0].imageMobileSrc
+              : images[0].imageSrc
+            : imageSrc ?? ""
+        }
         alt={images?.length ? images[0].alt : alt ?? "image"}
         width={imageWidth}
         height={2200}

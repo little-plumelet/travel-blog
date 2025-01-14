@@ -55,6 +55,7 @@
   transform: rotate(4deg);
 
   border: $photoPadding solid rgb(255, 252, 247);
+  border-bottom: calc($photoPadding * 2) solid rgb(255, 252, 247);
   border-radius: $photoRadius;
   box-shadow: 6px -6px 5px -6px rgba(87, 72, 11, 1);
   object-fit: cover;
@@ -127,4 +128,10 @@
   text-align: center;
   @include pageParagraphText();
   font-family: var(--font-shantell);
+
+  min-height: calc(16px * 2);
+
+  @include tablet() {
+    min-height: none;
+  }
 }
