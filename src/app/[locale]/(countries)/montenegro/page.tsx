@@ -4,8 +4,9 @@ import React from "react";
 
 import Description from "./sections/Description";
 import Introduction from "@/components/Introduction";
-import Locations from "./sections/Locations";
+import { routing } from "@/i18n/routing";
 
+import Locations from "./sections/Locations";
 import s from "./style.module.scss";
 
 function Montenegro() {
@@ -25,6 +26,10 @@ function Montenegro() {
       </div>
     </div>
   );
+}
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export default Montenegro;
