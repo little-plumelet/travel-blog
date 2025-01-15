@@ -18,13 +18,19 @@ function Introduction({
   image,
   imageMobile = image,
   frame,
+  frameOpacity,
 }: IntroductionProps) {
   const t = useTranslations(
     place ? `countries.${country}.locations.${place}` : `countries.${country}`
   );
   return (
     <section className={s.section}>
-      <FramedBackground image={image} imageMobile={imageMobile} frame={frame} />
+      <FramedBackground
+        image={image}
+        imageMobile={imageMobile}
+        frame={frame}
+        frameOpacity={frameOpacity}
+      />
       <div className={s.title}>{t("title")}</div>
     </section>
   );

@@ -31,6 +31,7 @@ function HercegNovi() {
         image="/assets/images/countries/montenegro/herceg-novi/intro-bg.webp"
         imageMobile="/assets/images/countries/montenegro/herceg-novi/intro-bg_mob.webp"
         frame={2}
+        frameOpacity={0.9}
       />
       <Articles />
       <Video src="https://www.youtube.com/embed/kkKii955-Ck?si=-hkC0HYJJJnGd9hp" />

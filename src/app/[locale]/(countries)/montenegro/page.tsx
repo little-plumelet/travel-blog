@@ -18,6 +18,7 @@ function Montenegro() {
           image="/assets/images/countries/montenegro/main/main.webp"
           imageMobile="/assets/images/countries/montenegro/main/main_mob.webp"
           frame={1}
+          frameOpacity={1}
         />
         <Description className={s.section} />
         <Locations className={cn(s.section, s.sectionList)} />
