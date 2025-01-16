@@ -56,6 +56,7 @@ export default function HomePage({
           height={661}
           className={cn(s.cloud, s.cloud_right__top)}
         />
+
         <Image
           src="/assets/images/home/cloud_1.webp"
           alt="cloud-left-bottom"
@@ -63,6 +64,7 @@ export default function HomePage({
           height={899}
           className={cn(s.cloud, s.cloud_left__bottom)}
         />
+
         <Image
           src="/assets/images/home/cloud_1.webp"
           alt="cloud-left-bottom"
@@ -74,6 +76,7 @@ export default function HomePage({
             s.cloud_left__bottom__animated
           )}
         />
+
         <Image
           src="/assets/images/home/cloud_2.webp"
           alt="cloud-right-bottom"
@@ -81,6 +84,7 @@ export default function HomePage({
           height={661}
           className={cn(s.cloud, s.cloud_right__bottom)}
         />
+
         <Image
           src="/assets/images/home/cloud_2.webp"
           alt="cloud-right-bottom"
@@ -107,6 +111,7 @@ export default function HomePage({
           height={708}
           className={cn(s.cloud, s.cloud_center_2, s.cloud_center_2__animated)}
         />
+
         <Image
           src="/assets/images/home/cloud_4.webp"
           alt="cloud_4"
@@ -123,6 +128,7 @@ export default function HomePage({
           height={708}
           className={cn(s.cloud, s.cloud__infinite)}
         />
+
         <Image
           src="/assets/images/home/cloud_4.webp"
           alt="cloud_4"
