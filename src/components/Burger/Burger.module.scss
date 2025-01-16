@@ -1,18 +1,29 @@
 .burger {
   position: relative;
-  width: 30px;
+  width: 28px;
   height: 20px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
 
   z-index: 10;
+}
+
+.burger::before {
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 50%;
 }
 
 .line {

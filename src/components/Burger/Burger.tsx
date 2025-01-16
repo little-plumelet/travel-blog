@@ -11,7 +11,11 @@ function Burger() {
     setIsOpen((prev) => !prev);
   };
   return (
-    <button className={s.burger} onClick={toggleBurger}>
+    <button
+      className={s.burger}
+      onClick={toggleBurger}
+      aria-label="menu-button"
+    >
       <motion.div
         className={s.line}
         animate={isOpen ? { rotate: 45, y: "280%" } : { rotate: 0, y: 0 }}
