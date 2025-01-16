@@ -3,9 +3,9 @@ import React from "react";
 
 import Introduction from "@/components/Introduction";
 import Video from "@/components/Video";
+import { routing } from "@/i18n/routing";
 
 import Articles from "./parts/Articles";
-
 import s from "./style.module.scss";
 
 function HercegNovi() {
@@ -50,3 +50,7 @@ function HercegNovi() {
 }
 
 export default HercegNovi;
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
