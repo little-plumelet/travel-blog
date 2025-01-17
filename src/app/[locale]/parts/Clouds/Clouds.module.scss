@@ -1,0 +1,157 @@
+@import "~/src/styles/mixins";
+
+.cloudsContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cloud {
+  position: absolute;
+  width: auto;
+  height: 50%;
+  opacity: 0.8;
+
+  @include tablet() {
+    width: 100%;
+    height: auto;
+  }
+
+  &_left__top {
+    top: 20%;
+    left: -100%;
+
+    animation: moveLeftUp 6s ease-in-out forwards;
+    @include tablet() {
+      top: 5%;
+      left: -25%;
+    }
+  }
+
+  &_right__top {
+    top: 15%;
+    animation: moveRightUp 6s ease-in-out forwards;
+  }
+
+  &_center {
+    top: 60%;
+
+    &__animated {
+      animation: moveUp 6s ease-in-out forwards;
+    }
+  }
+
+  &_center_2 {
+    width: 140%;
+    height: auto;
+
+    bottom: -10%;
+    left: -10%;
+    opacity: 0.6;
+
+    &__animated {
+      animation: moveUp 4s ease-in-out forwards;
+    }
+  }
+
+  &_left__bottom {
+    bottom: -7%;
+    left: -80%;
+    opacity: 0.8;
+    &__animated {
+      animation: moveLeftUp 5s ease-in-out forwards;
+      @include tablet() {
+        bottom: 0;
+        left: -40%;
+      }
+    }
+  }
+
+  &_right__bottom {
+    left: 10%;
+    bottom: -10%;
+
+    &__animated {
+      animation: moveRightUp 4s ease-in-out forwards;
+    }
+  }
+
+  &__infinite {
+    height: 40%;
+    width: 200vw;
+    left: 0;
+    top: 10%;
+    opacity: 0.8;
+    animation: infiniteClouds infinite 40s linear;
+
+    @include tablet() {
+      width: 100vw;
+      height: auto;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &__infinite_2 {
+    left: 200vw;
+    opacity: 0.7;
+    @include tablet() {
+      left: 100vw;
+    }
+  }
+
+  &__infinite_mob {
+    opacity: 0.7;
+    top: 50%;
+
+    animation: infiniteClouds infinite 30s linear;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__infinite_mob_2 {
+    left: 200vw;
+    @include tablet() {
+      left: 100vw;
+    }
+  }
+}
+
+@keyframes moveRightUp {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100%, -100%);
+  }
+}
+
+@keyframes moveLeftUp {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, -30%);
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, -200%);
+  }
+}
+
+@keyframes infiniteClouds {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
