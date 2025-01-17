@@ -12,8 +12,8 @@ function Background() {
   const windowWidth = useGetWindowWidth();
   const imageSrc =
     windowWidth < 780
-      ? "/assets/images/home/bg_mob.png"
-      : "/assets/images/home/bg.png";
+      ? "/assets/images/home/bg_mob.webp"
+      : "/assets/images/home/bg.webp";
 
   console.log(windowWidth);
   return (
