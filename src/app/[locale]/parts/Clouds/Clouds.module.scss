@@ -26,19 +26,28 @@
     @include tablet() {
       top: 5%;
       left: -25%;
+      animation: moveLeftUp 10s ease-in-out forwards;
     }
   }
 
   &_right__top {
-    top: 15%;
+    top: 18%;
+    left: 0;
     animation: moveRightUp 6s ease-in-out forwards;
+    @include tablet() {
+      animation: moveRightUp 10s ease-in-out forwards;
+    }
   }
 
   &_center {
-    top: 60%;
+    top: 40%;
 
     &__animated {
-      animation: moveUp 6s ease-in-out forwards;
+      animation: moveUp 5s ease-in-out forwards;
+
+      @include tablet() {
+        animation: moveUp 9s ease-in-out forwards;
+      }
     }
   }
 
@@ -46,17 +55,21 @@
     width: 140%;
     height: auto;
 
-    bottom: -10%;
+    bottom: 20%;
     left: -10%;
     opacity: 0.6;
 
     &__animated {
-      animation: moveUp 4s ease-in-out forwards;
+      animation: moveUp 4s ease forwards;
+
+      @include tablet() {
+        animation: moveUp 9s ease-in-out forwards;
+      }
     }
   }
 
   &_left__bottom {
-    bottom: -7%;
+    bottom: 4%;
     left: -80%;
     opacity: 0.8;
     &__animated {
@@ -64,16 +77,22 @@
       @include tablet() {
         bottom: 0;
         left: -40%;
+        @include tablet() {
+          animation: moveLeftUp 9s ease-in-out forwards;
+        }
       }
     }
   }
 
   &_right__bottom {
-    left: 10%;
-    bottom: -10%;
+    left: -10%;
+    bottom: 3%;
 
     &__animated {
-      animation: moveRightUp 4s ease-in-out forwards;
+      animation: moveRightUp 5s ease-in-out forwards;
+      @include tablet() {
+        animation: moveRightUp 10s ease-in-out forwards;
+      }
     }
   }
 
@@ -106,6 +125,7 @@
     top: 50%;
 
     animation: infiniteClouds infinite 30s linear;
+    animation-delay: 2s;
 
     @include tablet {
       display: none;
