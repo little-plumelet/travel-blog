@@ -1,10 +1,12 @@
 "use client";
 
-import React from "react";
+import cn from "classnames";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useState } from "react";
 import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
+import Loader from "@/components/common/Loader";
 import { Slide } from "@/types/slides";
 
 import "swiper/css";
@@ -24,6 +26,11 @@ function PhotoCardSwiper({
   isMobile,
   handleSlideChange,
 }: PhotoCardSwiperProps) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoading = () => {
+    setIsLoading(false);
+  };
   return (
     <>
       <Swiper
@@ -34,7 +41,8 @@ function PhotoCardSwiper({
         className={s.mySwiper}
         onSlideChange={handleSlideChange}
       >
-        {images.map((slide, index) => (
+        {isLoading && <Loader />}
+        {images.map((slide) => (
           <SwiperSlide key={slide.id}>
             <Image
               src={isMobile ? slide.imageMobileSrc : slide.imageSrc}
@@ -42,8 +50,8 @@ function PhotoCardSwiper({
               width={imageWidth}
               height={2200}
               sizes="(max-width: 780px) 46vw, 90vw"
-              className={s.img}
-              loading={index === 0 ? "eager" : "lazy"}
+              className={cn(s.img, { [s.loaded]: !isLoading })}
+              onLoad={handleLoading}
             />
           </SwiperSlide>
         ))}

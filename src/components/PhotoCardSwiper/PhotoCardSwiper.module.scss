@@ -13,6 +13,9 @@
 
   object-fit: cover;
 
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+
   @include tablet() {
     width: 100%;
     height: auto;
@@ -25,4 +28,8 @@
   text-align: left;
   @include pageParagraphText();
   font-family: var(--font-shantell);
+}
+
+.loaded {
+  opacity: 1;
 }
