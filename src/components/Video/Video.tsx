@@ -15,6 +15,7 @@ function Video({ src }: VideoProps) {
         referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen
         className={s.video}
+        loading="lazy"
       ></iframe>
     </div>
   );
