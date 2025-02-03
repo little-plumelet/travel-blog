@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -8,7 +9,7 @@ import useGetWindowWidth from "@/hooks/helpers/useGetWindowWidth";
 import { Slide } from "@/types/slides";
 
 import s from "./PhotoCard.module.scss";
-import { useTranslations } from "next-intl";
+import { getImageSrc } from "./utils";
 
 type PhotoCardProps = {
   images?: Array<Slide>;
@@ -18,6 +19,7 @@ type PhotoCardProps = {
   description?: string;
   decorVariant?: "star-fish" | "urchin";
 };
+
 function PhotoCard({
   images,
   description,
@@ -27,7 +29,7 @@ function PhotoCard({
   decorVariant,
 }: PhotoCardProps) {
   const windowWidth = useGetWindowWidth();
-  const imageSrc = windowWidth < 1000 ? imageMobile : image;
+  const imageSrc = getImageSrc(windowWidth, images, image, imageMobile);
   const imageWidth = windowWidth < 1000 ? 1500 : 4000;
   const t = useTranslations();
   const [activeIndex, setActiveIndex] = useState(0);
@@ -55,17 +57,11 @@ function PhotoCard({
         className={s.penLine}
       />
       <Image
-        src={
-          images?.length
-            ? windowWidth < 1000
-              ? images[0].imageMobileSrc
-              : images[0].imageSrc
-            : imageSrc ?? ""
-        }
+        src={imageSrc}
         alt={images?.length ? images[0].alt : alt ?? "image"}
         width={imageWidth}
         height={2200}
-        sizes="100vw"
+        sizes="(max-width: 780px) 46vw, 90vw"
         className={s.imgBg}
       />
       <Image
@@ -85,7 +81,7 @@ function PhotoCard({
             handleSlideChange={handleSlideChange}
           />
         )}
-        {!images?.length && imageSrc && (
+        {!images?.length && (
           <>
             <Image
               src={imageSrc}

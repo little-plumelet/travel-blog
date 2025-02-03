@@ -7,7 +7,6 @@ import { Pagination } from "swiper/modules";
 
 import { Slide } from "@/types/slides";
 
-// import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -32,20 +31,20 @@ function PhotoCardSwiper({
           clickable: true,
         }}
         modules={[Pagination]}
-        className="mySwiper"
+        className={s.mySwiper}
         onSlideChange={handleSlideChange}
       >
-        {images.map((slide) => (
+        {images.map((slide, index) => (
           <SwiperSlide key={slide.id}>
             <Image
               src={isMobile ? slide.imageMobileSrc : slide.imageSrc}
               alt={slide.alt}
               width={imageWidth}
               height={2200}
-              sizes="100vw"
+              sizes="(max-width: 780px) 46vw, 90vw"
               className={s.img}
+              loading={index === 0 ? "eager" : "lazy"}
             />
-            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
           </SwiperSlide>
         ))}
       </Swiper>
